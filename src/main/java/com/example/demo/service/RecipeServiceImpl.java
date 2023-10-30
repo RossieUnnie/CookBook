@@ -17,7 +17,7 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public Recipe delete(int id) {
+    public Recipe delete(Long id) {
         Recipe recipe = recipeRepository.findById(id).get();
         recipeRepository.delete(recipeRepository.findById(id).get());
         return recipe;
@@ -29,7 +29,7 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public Recipe getRecipe(int id) {
+    public Recipe getRecipe(Long id) {
         Recipe recipe = recipeRepository.findById(id).get();
         return recipe;
     }
@@ -45,7 +45,7 @@ public class RecipeServiceImpl implements RecipeService {
         return recipe;
     }
     @Override
-    public Recipe updateTitle(int id, String title) {
+    public Recipe updateTitle(Long id, String title) {
         Recipe recipe = recipeRepository.findById(id).get();
         recipe.setTitle(title);
         recipeRepository.save(recipe);
@@ -53,7 +53,7 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public Recipe updateIngredients(int id, String ingredients) {
+    public Recipe updateIngredients(Long id, String ingredients) {
         Recipe recipe = recipeRepository.findById(id).get();
         recipe.setIngredients(ingredients);
         recipeRepository.save(recipe);
@@ -61,7 +61,7 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public Recipe updatePreparation(int id, String preparation) {
+    public Recipe updatePreparation(Long id, String preparation) {
         Recipe recipe = recipeRepository.findById(id).get();
         recipe.setPreparation(preparation);
         recipeRepository.save(recipe);

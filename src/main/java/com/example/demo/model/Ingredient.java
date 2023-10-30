@@ -12,12 +12,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Recipe {
+public class Ingredient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long recipeId;
-    private String title;
-    private String ingredients;
-    private String preparation;
-
+    private Long id;
+    private String ingredient;
 }

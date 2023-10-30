@@ -23,7 +23,7 @@ public class ApiController {
     }
 
     @GetMapping("/recipe/{id}")
-    public ResponseEntity<?> getRecipe(@PathVariable int id) {
+    public ResponseEntity<?> getRecipe(@PathVariable Long id) {
         return ResponseEntity.status(200).body(recipeService.getRecipe(id));
     }
 
@@ -33,24 +33,24 @@ public class ApiController {
     }
 
     @DeleteMapping("recipe/{id}")
-    public ResponseEntity<?> delete(@PathVariable int id) {
+    public ResponseEntity<?> delete(@PathVariable Long id) {
         return ResponseEntity.status(200).body(recipeService.delete(id));
     }
 
     @PatchMapping("/update/title/{id}")
-    public ResponseEntity<?> updateTitle(@PathVariable int id,
+    public ResponseEntity<?> updateTitle(@PathVariable Long id,
                                          @RequestParam String title) {
         return ResponseEntity.status(200).body(recipeService.updateTitle(id, title));
     }
 
     @PatchMapping("/update/ingredients/{id}")
-    public ResponseEntity<?> updateIngredients(@PathVariable int id,
+    public ResponseEntity<?> updateIngredients(@PathVariable Long id,
                                                @RequestParam String ingredients) {
         return ResponseEntity.status(200).body(recipeService.updateIngredients(id, ingredients));
     }
 
     @PatchMapping("/update/preparation/{id}")
-    public ResponseEntity<?> updatePreparation(@PathVariable int id,
+    public ResponseEntity<?> updatePreparation(@PathVariable Long id,
                                                @RequestParam String preparation) {
         return ResponseEntity.status(200).body(recipeService.updatePreparation(id, preparation));
     }

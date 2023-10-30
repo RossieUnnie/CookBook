@@ -6,17 +6,17 @@ import java.util.List;
 
 public interface RecipeService {
 
-    Recipe delete(int id);
+    Recipe delete(Long id);
 
     Recipe save(Recipe recipe);
 
-    Recipe getRecipe(int id);
+    Recipe getRecipe(Long id);
 
     List<Recipe> getAll();
 
-    Recipe updateTitle(int id, String title);
+    Recipe updateTitle(Long id, String title);
 
-    Recipe updateIngredients(int id, String ingredients);
+    Recipe updateIngredients(Long id, String ingredients);
 
-    Recipe updatePreparation(int id, String preparation);
+    Recipe updatePreparation(Long id, String preparation);
 }
